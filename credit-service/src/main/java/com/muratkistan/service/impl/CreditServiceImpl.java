@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class CreditServiceImpl implements CreditService {
 
     private final CreditRepository creditRepository;
     private final CreditScoreService creditScoreService;
+    private final RestTemplate restTemplate;
 
 
     @Override
@@ -72,12 +74,14 @@ public class CreditServiceImpl implements CreditService {
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
                     log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
+                    restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }else{
                     limit =20000;
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
                     log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
+                    restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }
             }else{
@@ -85,6 +89,7 @@ public class CreditServiceImpl implements CreditService {
                 credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                 addCredit(credit);
                 log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
+                restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
                 return new CreditResultDto(true,identityNumber,score,limit);
             }
         }else{
