@@ -74,14 +74,14 @@ public class CreditServiceImpl implements CreditService {
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
                     log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
-                    restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
+                    restTemplate.postForObject("http://USER-SERVICE/users/add", creditRequestDto, Object.class);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }else{
                     limit =20000;
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
                     log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
-                    restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
+                    restTemplate.postForObject("http://USER-SERVICE/users/add", creditRequestDto, Object.class);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }
             }else{
@@ -89,7 +89,7 @@ public class CreditServiceImpl implements CreditService {
                 credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                 addCredit(credit);
                 log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
-                restTemplate.postForObject("http://localhost:9092/users/add", creditRequestDto, Object.class);
+                restTemplate.postForObject("http://USER-SERVICE/users/add", creditRequestDto, Object.class);
                 return new CreditResultDto(true,identityNumber,score,limit);
             }
         }else{

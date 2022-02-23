@@ -19,7 +19,6 @@ public class Credit {
     private String id;
 
     @NotNull
-    @Indexed(unique=true)
     private String identityNumber;
 
     @NotNull
