@@ -25,11 +25,13 @@ public class CreditServiceImpl implements CreditService {
 
     @Override
     public Credit addCredit(Credit credit) {
+        log.info("Adding credit score to DB + "+credit);
         return creditRepository.save(credit);
     }
 
     @Override
     public List<Credit> getAllCredits() {
+        log.info("Get All credits from DB");
         return creditRepository.findAll();
     }
 
@@ -40,11 +42,13 @@ public class CreditServiceImpl implements CreditService {
             creditDB.setIdentityNumber(credit.getIdentityNumber());
             creditDB.setCreditLimit(credit.getCreditLimit());
         }
+        log.info("Updated credit score -> user identity Number: "+identityNumber + " credit score : "+ credit);
         return null;
     }
 
     @Override
     public Credit findCreditByIdentityNumber(String identityNumber) {
+        log.info("Get credit score user identity number : "+identityNumber);
         return creditRepository.findByIdentityNumber(identityNumber);
     }
 
@@ -67,21 +71,25 @@ public class CreditServiceImpl implements CreditService {
                     limit =10000;
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
+                    log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }else{
                     limit =20000;
                     credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                     addCredit(credit);
+                    log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
                     return new CreditResultDto(true,identityNumber,score,limit);
                 }
             }else{
                 limit = 4 * salary;
                 credit = Credit.builder().identityNumber(identityNumber).creditLimit(limit).build();
                 addCredit(credit);
+                log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
                 return new CreditResultDto(true,identityNumber,score,limit);
             }
         }else{
 
+            log.info("Unapproved credit -> identity Number : " +identityNumber );
             return new CreditResultDto(false);
         }
     }
