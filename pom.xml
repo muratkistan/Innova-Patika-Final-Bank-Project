@@ -11,6 +11,8 @@
     <modules>
         <module>user-service</module>
         <module>credit-service</module>
+        <module>eureka-server</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <properties>
