@@ -25,5 +25,5 @@ public class CreditScore {
     private String identityNumber;
 
     @NotNull
-    private Long creditScore;
+    private Short creditScore;
 }
