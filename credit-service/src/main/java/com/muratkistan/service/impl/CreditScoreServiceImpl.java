@@ -1,13 +1,18 @@
 package com.muratkistan.service.impl;
 
+import com.muratkistan.dto.CreditScoreDto;
+import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.CreditScore;
 import com.muratkistan.repository.CreditScoreRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -15,34 +20,38 @@ import java.util.List;
 public class CreditScoreServiceImpl implements CreditScoreService {
 
     private final CreditScoreRepository creditScoreRepository;
+    private final ModelMapper modelMapper;
 
     @Override
-    public CreditScore addScore(CreditScore creditScore) {
-        log.info("Adding credit score to DB + "+creditScore);
-        return creditScoreRepository.save(creditScore);
+    public CreditScoreDto addScore(CreditScoreDto creditScoreDto) {
+        CreditScore creditScore = modelMapper.map(creditScoreDto,CreditScore.class);
+        log.info("Adding credit score to DB + "+creditScoreDto);
+        return  modelMapper.map(creditScoreRepository.save(creditScore),CreditScoreDto.class);
     }
 
     @Override
-    public List<CreditScore> getAllScores() {
+    public List<CreditScoreDto> getAllScores() {
+        List<CreditScore> creditScores = creditScoreRepository.findAll();
+        List<CreditScoreDto> creditScoreDtos =  creditScores.stream().map(score -> modelMapper.map(score,CreditScoreDto.class)).collect(Collectors.toList());
         log.info("Get All creditScores from DB");
-        return creditScoreRepository.findAll();
+       return creditScoreDtos;
     }
 
     @Override
-    public CreditScore updateCreditScore(String identityNumber, CreditScore creditScore) {
-        CreditScore creditScoreDB = findByIdentityNumber(identityNumber);
-        if(creditScoreDB != null){
-            creditScoreDB.setIdentityNumber(creditScore.getIdentityNumber());
-            creditScoreDB.setCreditScore(creditScore.getCreditScore());
-            log.info("Updated credit score -> user identity Number: "+identityNumber + " credit score : "+ creditScore);
-            return creditScoreRepository.save(creditScoreDB);
-        }
-        return null;
+    public CreditScoreDto updateCreditScore(String identityNumber, CreditScoreDto creditScoreDto) {
+        log.info("Updated credit score -> user identity Number: "+identityNumber + " credit score : "+ creditScoreDto);
+        CreditScoreDto dtoDb = findByIdentityNumber(identityNumber);
+        dtoDb.setIdentityNumber(creditScoreDto.getIdentityNumber());
+        dtoDb.setCreditScore(creditScoreDto.getCreditScore());
+        return modelMapper.map(creditScoreRepository.save(modelMapper.map(dtoDb,CreditScore.class)),CreditScoreDto.class);
+
+
     }
 
     @Override
-    public CreditScore findByIdentityNumber(String identityNumber) {
-        log.info("Get credit score user identity number : "+identityNumber);
-        return  creditScoreRepository.findByIdentityNumber(identityNumber);
+    public CreditScoreDto findByIdentityNumber(String identityNumber) {
+        log.info("Get credit score for user identity number : "+identityNumber);
+        Optional<CreditScore> creditScore = creditScoreRepository.findByIdentityNumber(identityNumber);
+        return creditScore.map(score -> modelMapper.map(score, CreditScoreDto.class)).orElseThrow(() ->new NotFoundException("Credit Score"));
     }
 }
