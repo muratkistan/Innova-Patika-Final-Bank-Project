@@ -31,32 +31,31 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserDto> getAllUsers() {
-        List<User> users = userRepository.findAll();
-        List<UserDto> userDtos = users.stream().map(user -> modelMapper.map(user,UserDto.class)).collect(Collectors.toList());
         log.info("get all users from DB");
-        return userDtos;
+        List<User> users = userRepository.findAll();
+        return users.stream().map(user -> modelMapper.map(user,UserDto.class)).collect(Collectors.toList());
     }
 
     @Override
     public UserDto getUserById(Long userId) {
-        Optional<User> user = userRepository.findById(userId);
         log.info("Get one user from Db -> id: "+userId);
+        Optional<User> user = userRepository.findById(userId);
         return user.map(value -> modelMapper.map(value, UserDto.class)).orElseThrow(() ->new NotFoundException("User"));
 
     }
 
     @Override
     public UserDto updateUser(Long userId, UserDto userDto) {
+        log.info("Update user -> id: "+userId + " and "+ userDto);
         UserDto userDtoDB = getUserById(userId);
         userDto.setId(userId);
-        log.info("Update user -> id: "+userId + " and "+ userDto);
         return modelMapper.map(userRepository.save(modelMapper.map(userDto,User.class)),UserDto.class);
     }
 
     @Override
     public Boolean deleteUser(Long userId) {
-        userRepository.delete(modelMapper.map(getUserById(userId),User.class));
         log.info("Deleted user ->  id: "+userId );
+        userRepository.delete(modelMapper.map(getUserById(userId),User.class));
         return true;
     }
 }
