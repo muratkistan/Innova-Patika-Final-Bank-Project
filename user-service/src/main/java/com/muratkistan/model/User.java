@@ -22,24 +22,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "identity_number",unique = true)
-    @NotNull
+    @Column(name = "identity_number")
     private String identityNumber;
 
     @Column(name = "first_name")
-    @NotNull
     private String firstName;
 
     @Column(name="last_name")
-    @NotNull
     private String lastName;
 
     @Column(name = "monthly_salary")
-    @NotNull
     private double monthlySalary;
 
-    @Column(name = "phone_number",unique = true)
-    @NotNull
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Override

@@ -1,16 +1,20 @@
 package com.muratkistan.controller;
 
 import com.muratkistan.dto.UserDto;
-
-import com.muratkistan.model.mapper.UserMapper;
+import com.muratkistan.error.ApiError;
 import com.muratkistan.service.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -51,6 +55,20 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public boolean deleteUser(@PathVariable Long id){
         return userService.deleteUser(id);
+    }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiError handleValidationException( MethodArgumentNotValidException exception){
+        Map<String,String> validationErrors = new HashMap<>();
+        ApiError error = new ApiError(400,"Validation Error","/users/add");
+        for (FieldError fieldError :  exception.getBindingResult().getFieldErrors()){
+            validationErrors.put(fieldError.getField(),fieldError.getDefaultMessage());
+        }
+        error.setValidationErrors(validationErrors);
+        return error;
+
     }
 
 }

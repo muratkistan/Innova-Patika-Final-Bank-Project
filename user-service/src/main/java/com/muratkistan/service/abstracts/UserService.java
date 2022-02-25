@@ -1,10 +1,8 @@
 package com.muratkistan.service.abstracts;
 
 import com.muratkistan.dto.UserDto;
-import com.muratkistan.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
 
