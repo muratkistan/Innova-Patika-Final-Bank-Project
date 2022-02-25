@@ -1,5 +1,7 @@
 package com.muratkistan.dto;
 
+import com.muratkistan.custom.annotations.identity.UniqueIdentityNumber;
+import com.muratkistan.custom.annotations.phone.UniquePhoneNumber;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +19,7 @@ public class UserDto {
 
 
     @NotNull
+    @UniqueIdentityNumber
     private String identityNumber;
 
     @NotNull
@@ -29,5 +32,6 @@ public class UserDto {
     private double monthlySalary;
 
     @NotNull
+    @UniquePhoneNumber
     private String phoneNumber;
 }
