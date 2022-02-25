@@ -50,6 +50,12 @@
             <artifactId>modelmapper</artifactId>
             <version>3.0.0</version>
         </dependency>
+        <!--common-->
+        <dependency>
+            <groupId>com.muratkistan</groupId>
+            <artifactId>common-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 
         <dependency>
