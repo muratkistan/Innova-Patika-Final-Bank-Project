@@ -20,10 +20,8 @@ public class CreditScore {
     @Id
     private String id;
 
-    @NotNull
     @Indexed(unique=true)
     private String identityNumber;
 
-    @NotNull
-    private Short creditScore;
+    private int creditScore;
 }

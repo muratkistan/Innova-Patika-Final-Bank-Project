@@ -1,17 +1,17 @@
 package com.muratkistan.service.impl;
 
 import com.muratkistan.dto.CreditScoreDto;
-import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.CreditScore;
 import com.muratkistan.repository.CreditScoreRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,10 +31,10 @@ public class CreditScoreServiceImpl implements CreditScoreService {
 
     @Override
     public List<CreditScoreDto> getAllScores() {
-        List<CreditScore> creditScores = creditScoreRepository.findAll();
-        List<CreditScoreDto> creditScoreDtos =  creditScores.stream().map(score -> modelMapper.map(score,CreditScoreDto.class)).collect(Collectors.toList());
         log.info("Get All creditScores from DB");
-       return creditScoreDtos;
+        List<CreditScore> creditScores = creditScoreRepository.findAll();
+
+        return creditScores.stream().map(score -> modelMapper.map(score,CreditScoreDto.class)).collect(Collectors.toList());
     }
 
     @Override
@@ -50,8 +50,15 @@ public class CreditScoreServiceImpl implements CreditScoreService {
 
     @Override
     public CreditScoreDto findByIdentityNumber(String identityNumber) {
-        log.info("Get credit score for user identity number : "+identityNumber);
-        Optional<CreditScore> creditScore = creditScoreRepository.findByIdentityNumber(identityNumber);
-        return creditScore.map(score -> modelMapper.map(score, CreditScoreDto.class)).orElseThrow(() ->new NotFoundException("Credit Score"));
+        return modelMapper.map(creditScoreRepository.findByIdentityNumber(identityNumber),CreditScoreDto.class);
     }
+
+
+    @Override
+    public Boolean existsByIdentityNumber(String identityNumber) {
+        log.info("Check credit score for user identity number : "+identityNumber);
+        return creditScoreRepository.existsByIdentityNumber(identityNumber);
+    }
+
+
 }

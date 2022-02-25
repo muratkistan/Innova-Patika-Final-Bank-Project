@@ -23,4 +23,7 @@ public class Credit {
 
     @NotNull
     private double creditLimit;
+
+    @NotNull
+    private Boolean status;
 }

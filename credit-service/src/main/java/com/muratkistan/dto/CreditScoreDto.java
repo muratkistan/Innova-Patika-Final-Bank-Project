@@ -20,5 +20,14 @@ public class CreditScoreDto {
     private String identityNumber;
 
     @NotNull
-    private Short creditScore;
+    private int creditScore;
+
+    public CreditScoreDto(int creditScore) {
+        this.creditScore = creditScore;
+    }
+
+    public CreditScoreDto(String identityNumber, int creditScore) {
+        this.identityNumber = identityNumber;
+        this.creditScore = creditScore;
+    }
 }

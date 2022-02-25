@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class CreditResultDto {
     private boolean status;
     private String identityNumber;
-    private Long creditScore;
+    private int creditScore;
     private double creditLimit;
 
     public CreditResultDto(boolean status) {

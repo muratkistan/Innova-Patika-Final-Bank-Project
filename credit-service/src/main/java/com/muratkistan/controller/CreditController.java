@@ -1,11 +1,14 @@
 package com.muratkistan.controller;
 
-import com.muratkistan.dto.CreditRequestDto;
+import com.muratkistan.dto.CreditDto;
+
 import com.muratkistan.dto.CreditResultDto;
-import com.muratkistan.model.Credit;
+import com.muratkistan.dto.UserDto;
 import com.muratkistan.service.abstracts.CreditService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import javax.validation.Valid;
 import java.util.List;
@@ -18,17 +21,17 @@ public class CreditController {
     private final CreditService creditService;
 
     @GetMapping("/getAll")
-    public List<Credit> getAllCredits(){
-        return creditService.getAllCredits();
+    public ResponseEntity<List<CreditDto>> getAllCredits(){
+        return ResponseEntity.ok(creditService.getAllCredits());
     }
 
     @GetMapping("/{identityNumber}")
-    public Credit findCreditByIdentityNumber(@PathVariable("identityNumber") String identityNumber) {
-        return creditService.findCreditByIdentityNumber(identityNumber);
+    public ResponseEntity<CreditDto> findCreditByIdentityNumber(@PathVariable("identityNumber") String identityNumber) {
+        return  ResponseEntity.ok(creditService.findCreditByIdentityNumber(identityNumber));
     }
 
     @PostMapping("/calculate")
-    public CreditResultDto calculateCredit(@Valid @RequestBody CreditRequestDto creditRequestDto) {
-        return creditService.calculateCredit(creditRequestDto);
+    public CreditResultDto calculateCredit(@Valid @RequestBody UserDto userDto) {
+        return creditService.calculateCredit(userDto);
     }
 }

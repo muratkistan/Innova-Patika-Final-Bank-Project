@@ -11,4 +11,6 @@ public interface CreditScoreService {
     List<CreditScoreDto> getAllScores();
     CreditScoreDto updateCreditScore(String identityNumber,CreditScoreDto creditScoreDto);
     CreditScoreDto findByIdentityNumber(String identityNumber);
+    Boolean existsByIdentityNumber(String identityNumber);
+
 }

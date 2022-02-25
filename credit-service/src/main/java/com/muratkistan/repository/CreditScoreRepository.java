@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface CreditScoreRepository extends MongoRepository<CreditScore,String> {
-    Optional<CreditScore> findByIdentityNumber(String identityNumber);
+    CreditScore findByIdentityNumber(String identityNumber);
+    Boolean existsByIdentityNumber(String identityNumber);
 }
+
