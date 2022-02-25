@@ -41,6 +41,7 @@ public class GenericExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ApiError> handleDataIntegrityViolationException(DataIntegrityViolationException exception){
         Map<String,String> validationErrors = new HashMap<>();
+        validationErrors.put("identityNumber","User already exist");
         ApiError error = new ApiError(400,"User already exist","/users/add");
 
         error.setValidationErrors(validationErrors);
