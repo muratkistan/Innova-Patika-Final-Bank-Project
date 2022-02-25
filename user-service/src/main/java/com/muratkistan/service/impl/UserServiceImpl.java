@@ -3,7 +3,7 @@ package com.muratkistan.service.impl;
 import com.muratkistan.dto.UserDto;
 import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.User;
-import com.muratkistan.repository.Userrepository;
+import com.muratkistan.repository.UserRepository;
 import com.muratkistan.service.abstracts.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @Log4j2
 public class UserServiceImpl implements UserService {
 
-    private final Userrepository userRepository;
+    private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
     @Override
