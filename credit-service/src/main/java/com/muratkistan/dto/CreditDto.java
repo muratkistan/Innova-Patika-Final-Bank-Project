@@ -1,5 +1,6 @@
 package com.muratkistan.dto;
 
+import com.muratkistan.custom.annotations.UniqueCredit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

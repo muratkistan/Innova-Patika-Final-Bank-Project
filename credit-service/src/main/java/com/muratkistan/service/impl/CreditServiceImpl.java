@@ -71,7 +71,7 @@ public class CreditServiceImpl implements CreditService {
 
 
     //CHECK USER FROM DATABASE IN USER-SERVICE
-    Boolean checkUserFromUserService(RestTemplate restTemplate,String identityNumber){
+     Boolean checkUserFromUserService(RestTemplate restTemplate,String identityNumber){
         return restTemplate.getForObject("http://USER-SERVICE/users/exists/"+identityNumber,Boolean.class);
     }
 
@@ -87,6 +87,7 @@ public class CreditServiceImpl implements CreditService {
         }else {//MINIMUM LIMIT IS  ASSIGNED TO A NEW CUSTOMER
             score = 500;
         }
+        //CALCULATE CREDIT
         return calculateCreditHelper(score,userDto);
     }
 

@@ -13,6 +13,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = {UniqueIdentityNumberValidator.class })
 public @interface UniqueIdentityNumber {
 
+    //My Custom Annotation. Check for Identıty Number is already exits?
+
+
     String message() default "User already exist. ";
 
     Class<?>[] groups() default { };

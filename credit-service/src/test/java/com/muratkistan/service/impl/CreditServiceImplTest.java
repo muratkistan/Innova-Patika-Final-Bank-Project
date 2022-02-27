@@ -2,11 +2,12 @@ package com.muratkistan.service.impl;
 
 import com.muratkistan.dto.CreditDto;
 import com.muratkistan.dto.UserDto;
+import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.Credit;
 import com.muratkistan.repository.CreditRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
 import org.junit.Assert;
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -39,36 +41,70 @@ class CreditServiceImplTest {
     @InjectMocks
     private CreditServiceImpl creditService;
 
-//    @BeforeEach
-//    public void setUp(){
-//        creditRepository = mock(CreditRepository.class);
-//        creditScoreService= mock(CreditScoreService.class);
-//        modelMapper = mock(ModelMapper.class);
-//        restTemplate = mock(RestTemplate.class);
-//
-//        creditService = new CreditServiceImpl(creditRepository,creditScoreService,modelMapper,restTemplate);
-//    }
+
 
 
     @Test
     void getAllCredits(){
 
-        Credit creditDto1 = new Credit("1111","1111",10000,true);
-        Credit creditDto2 = new Credit("2222","2222",20000,true);
+        Credit credit1 = new Credit("1111","11111111111",10000,true);
+        Credit credit2 = new Credit("2222","22222222222",20000,true);
 
 
-        List<Credit> creditDtos= new ArrayList<>();
+        List<Credit> credits= new ArrayList<>();
 
-        creditDtos.add(creditDto1);
-        creditDtos.add(creditDto2);
+        credits.add(credit1);
+        credits.add(credit2);
 
-        when(creditRepository.findAll()).thenReturn(creditDtos);
+        when(creditRepository.findAll()).thenReturn(credits);
 
         List<CreditDto> allCreditDtos = creditService.getAllCredits();
 
-        Assert.assertEquals(creditDtos.size(),allCreditDtos.size());
+        Assert.assertEquals(credits.size(),allCreditDtos.size());
         verify(creditRepository).findAll();
     }
+
+
+//    @Test
+//    void getCredits_successful(){
+//
+//        //init step
+//        Credit expectedCredit = new Credit("3","546",10000,true);
+//
+////        stub - when step
+//        Optional<Credit> expectedOptionalCredit = (Optional<Credit>) Optional.of(expectedCredit);
+//        when(creditRepository.findByIdentityNumber("1111")).thenReturn(expectedOptionalCredit);
+//
+//        //then step
+//        CreditDto actualCreditDto = creditService.findCreditByIdentityNumber("546");
+//
+//        //valid step
+//        assertEquals(expectedCredit, actualCreditDto);
+//    }
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//    @Test
+//    void addCredit(){
+//        Credit expectedCredit = new Credit("1111","11111111111",10000,true);
+//        Credit credit2 = new Credit("2222","22222222222",20000,true);
+//        // stub - when
+//        when(creditRepository.save(expectedCredit)).thenReturn(expectedCredit);
+//
+//        // then
+//        creditService.addCredit(modelMapper.map(expectedCredit,CreditDto.class));
+//        Optional<Credit> byId = creditRepository.findById("1111");
+////
+//        Assert.assertEquals(expectedCredit, byId);
+//
+//        verify(creditRepository, times(1)).save(expectedCredit);
+//    }
+
+
+
+
+
+
+
+
 
 
 }

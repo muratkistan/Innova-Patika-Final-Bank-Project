@@ -1,5 +1,6 @@
 package com.muratkistan.service.impl;
 
+
 import com.muratkistan.dto.UserDto;
 import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.User;
@@ -22,6 +23,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
 
+    // ADD USER
     @Override
     public UserDto addUser(UserDto userDto) {
         User user = modelMapper.map(userDto,User.class);
@@ -29,33 +31,48 @@ public class UserServiceImpl implements UserService {
         return modelMapper.map(userRepository.save(user),UserDto.class);
     }
 
+    //LIST ALL USERS
     @Override
     public List<UserDto> getAllUsers() {
         log.info("get all users from DB");
         List<User> users = userRepository.findAll();
-        return users.stream().map(user -> modelMapper.map(user,UserDto.class)).collect(Collectors.toList());
+        return users.stream()
+                .map(user -> modelMapper.map(user,UserDto.class))
+                .collect(Collectors.toList());
     }
 
+    // GET ONE USER BY ID
     @Override
     public UserDto getUserById(Long userId) {
         log.info("Get one user from Db -> id: "+userId);
         Optional<User> user = userRepository.findById(userId);
-        return user.map(value -> modelMapper.map(value, UserDto.class)).orElseThrow(() ->new NotFoundException("User"));
+        return user.map(value -> modelMapper.map(value, UserDto.class))
+                .orElseThrow(() ->new NotFoundException("User"));
 
     }
 
+    //UPDATE USER
     @Override
     public UserDto updateUser(Long userId, UserDto userDto) {
-        log.info("Update user -> id: "+userId + " and "+ userDto);
-        UserDto userDtoDB = getUserById(userId);
+        getUserById(userId);
         userDto.setId(userId);
+        log.info("Update user -> id: "+userId + " and "+ userDto);
         return modelMapper.map(userRepository.save(modelMapper.map(userDto,User.class)),UserDto.class);
     }
 
+    // DELETE USER
     @Override
-    public Boolean deleteUser(Long userId) {
+    public UserDto deleteUser(Long userId) {
         log.info("Deleted user ->  id: "+userId );
-        userRepository.delete(modelMapper.map(getUserById(userId),User.class));
-        return true;
+        Optional<User> user = userRepository.findById(userId);
+        userRepository.delete(user.get());
+        return modelMapper.map(user.get(),UserDto.class);
+
+    }
+
+    //IS USER EXISTS
+    @Override
+    public Boolean isUserExistsByIdentityNumber(String identityNumber) {
+        return userRepository.existsByIdentityNumber(identityNumber);
     }
 }

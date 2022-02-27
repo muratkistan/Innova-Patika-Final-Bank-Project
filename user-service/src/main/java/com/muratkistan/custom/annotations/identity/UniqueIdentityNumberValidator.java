@@ -12,10 +12,11 @@ public class UniqueIdentityNumberValidator implements ConstraintValidator<Unique
 
     private final UserRepository userRepository;
 
+    //Check  user is already exist?
     @Override
     public boolean isValid(String identityNumber, ConstraintValidatorContext context) {
        User user = userRepository.findByIdentityNumber(identityNumber);
-       if(user != null) {
+       if(user != null) {//User already exist
            return false;
        }
 

@@ -1,6 +1,6 @@
 package com.muratkistan.exception.handler;
 
-import com.muratkistan.error.ApiError;
+import com.muratkistan.custom.errors.ApiError;
 import com.muratkistan.exception.NotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -33,7 +33,7 @@ public class GenericExceptionHandler {
             validationErrors.put(fieldError.getField(),fieldError.getDefaultMessage());
         }
         error.setValidationErrors(validationErrors);
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 
     }
 

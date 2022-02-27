@@ -10,5 +10,6 @@ public interface UserService {
     List<UserDto> getAllUsers();
     UserDto getUserById(Long userId);
     UserDto updateUser(Long userId,UserDto userDto);
-    Boolean deleteUser(Long id);
+    UserDto deleteUser(Long id);
+    Boolean isUserExistsByIdentityNumber(String identityNumber);
 }

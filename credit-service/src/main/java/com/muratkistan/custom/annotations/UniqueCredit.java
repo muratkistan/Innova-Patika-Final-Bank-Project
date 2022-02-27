@@ -13,7 +13,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = { UniqueCreditValidator.class})
 public @interface UniqueCredit {
 
-    String message() default "You have already a credit ";
+    String message() default "You have already a credit apply ";
 
     Class<?>[] groups() default { };
 

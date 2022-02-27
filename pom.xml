@@ -13,6 +13,7 @@
         <module>credit-service</module>
         <module>eureka-server</module>
         <module>cloud-gateway</module>
+        <module>common-service</module>
     </modules>
 
     <properties>

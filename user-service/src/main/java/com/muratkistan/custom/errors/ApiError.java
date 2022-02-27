@@ -1,4 +1,4 @@
-package com.muratkistan.error;
+package com.muratkistan.custom.errors;
 
 import lombok.Data;
 

@@ -10,9 +10,16 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@RestController
+/*
+* This is a fake controller class make fake data for database
+* It is not accessible from outside
+*
+*/
+
+
+//@RestController
 @RequiredArgsConstructor
-@RequestMapping("/credits/score")
+//@RequestMapping("/credits/score")
 public class CreditScoreController {
 
     private final CreditScoreService creditScoreService;

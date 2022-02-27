@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="user-service" />
+        <module name="common-service" />
         <module name="credit-service" />
         <module name="eureka-server" />
         <module name="cloud-gateway" />
