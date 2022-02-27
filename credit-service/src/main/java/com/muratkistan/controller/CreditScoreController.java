@@ -17,9 +17,9 @@ import java.util.List;
 */
 
 
-//@RestController
+@RestController
 @RequiredArgsConstructor
-//@RequestMapping("/credits/score")
+@RequestMapping("/credits/score")
 public class CreditScoreController {
 
     private final CreditScoreService creditScoreService;

@@ -49,15 +49,11 @@ public class CreditServiceImpl implements CreditService {
 
 
 
-    //UPDATE
-    @Override
-    public CreditDto updateCredit(String identityNumber, CreditDto creditDto) {
-        log.info("Updated credit  -> user identity Number: "+identityNumber + " credit score : "+ creditDto);
-        CreditDto creditDtoDB = findCreditByIdentityNumber(identityNumber);
-        creditDtoDB.setIdentityNumber(creditDto.getIdentityNumber());
-        creditDtoDB.setCreditLimit(creditDto.getCreditLimit());
-        return modelMapper.map(creditRepository.save(modelMapper.map(creditDto,Credit.class)),CreditDto.class);
-    }
+
+
+
+
+
 
     //FIND CREDIT BY IDENTITY NUMBER
     @Override

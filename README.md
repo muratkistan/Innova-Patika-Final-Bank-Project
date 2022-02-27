@@ -1,7 +1,6 @@
 # Innova Patika Java Spring Bootcamp Bitirme Projesi
 
-Bu repositoryde bitirme projesinin backend tarafi bulunmaktadir.
-Projenin frontend reposuna gitmek icin [**buraya**](https://github.com/muratkistan/innova-patika-final-bank-frontend) tiklayabilirsiniz.
+ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-final-bank-frontend)
 
 ## API KULLANIMI
 

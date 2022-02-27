@@ -11,7 +11,6 @@ import java.util.Optional;
 public interface CreditService {
     CreditDto addCredit(CreditDto CreditDto);
     List<CreditDto> getAllCredits();
-    CreditDto updateCredit(String identityNumber,CreditDto creditDto);
     CreditDto findCreditByIdentityNumber(String identityNumber);
     CreditResultDto calculateCredit(UserDto userDto);
 }
