@@ -25,3 +25,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+
+logging:
+  file:
+    name: ./cloud-gateway/log/blog.log
