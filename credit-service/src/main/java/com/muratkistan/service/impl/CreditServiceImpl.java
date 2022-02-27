@@ -47,6 +47,8 @@ public class CreditServiceImpl implements CreditService {
         return credits.stream().map(score -> modelMapper.map(score,CreditDto.class)).collect(Collectors.toList());
     }
 
+
+
     //UPDATE
     @Override
     public CreditDto updateCredit(String identityNumber, CreditDto creditDto) {
@@ -54,7 +56,7 @@ public class CreditServiceImpl implements CreditService {
         CreditDto creditDtoDB = findCreditByIdentityNumber(identityNumber);
         creditDtoDB.setIdentityNumber(creditDto.getIdentityNumber());
         creditDtoDB.setCreditLimit(creditDto.getCreditLimit());
-        return creditDtoDB;
+        return modelMapper.map(creditRepository.save(modelMapper.map(creditDto,Credit.class)),CreditDto.class);
     }
 
     //FIND CREDIT BY IDENTITY NUMBER
@@ -65,6 +67,8 @@ public class CreditServiceImpl implements CreditService {
         return credit.map(score -> modelMapper.map(score, CreditDto.class)).orElseThrow(() ->new NotFoundException("Credit"));
 
     }
+
+
 
     //CHECK USER FROM DATABASE IN USER-SERVICE
     Boolean checkUserFromUserService(RestTemplate restTemplate,String identityNumber){
@@ -77,8 +81,6 @@ public class CreditServiceImpl implements CreditService {
     public CreditResultDto calculateCredit(UserDto userDto) {
         int score;
         CreditScoreDto creditScoreDto;
-
-        //
         if (creditScoreService.existsByIdentityNumber(userDto.getIdentityNumber())){
              creditScoreDto = creditScoreService.findByIdentityNumber(userDto.getIdentityNumber());
             score = creditScoreDto.getCreditScore();
@@ -89,13 +91,17 @@ public class CreditServiceImpl implements CreditService {
     }
 
 
-
     //HELPER METHOD FOR CALCULATE CREDIT
     CreditResultDto calculateCreditHelper(int score,UserDto userDto){
         double limit,salary=userDto.getMonthlySalary();
         String identityNumber = userDto.getIdentityNumber();
 
         if(score >= 500){//APPROVED CREDIT
+
+            if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
+                restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
+                creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
+            }
 
             if(score < 1000){
                 if(salary < 5000){
@@ -108,11 +114,6 @@ public class CreditServiceImpl implements CreditService {
             }
             addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(limit).status(true).build(),CreditDto.class));
             log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
-
-            if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
-                restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
-                creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
-            }
 
             return new CreditResultDto(true,identityNumber,score,limit);
         }else{//UNAPPROVED CREDIT
