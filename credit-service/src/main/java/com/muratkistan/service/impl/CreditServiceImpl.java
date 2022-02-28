@@ -6,6 +6,7 @@ import com.muratkistan.repository.CreditRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
 import com.muratkistan.service.abstracts.CreditService;
 import com.muratkistan.util.NotFoundException;
+import com.muratkistan.util.constants.ConstantVariable;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -60,7 +61,7 @@ public class CreditServiceImpl implements CreditService {
 
     //CHECK USER FROM DATABASE IN USER-SERVICE
      Boolean checkUserFromUserService(RestTemplate restTemplate,String identityNumber){
-        return restTemplate.getForObject("http://USER-SERVICE/users/exists/"+identityNumber,Boolean.class);
+        return restTemplate.getForObject(ConstantVariable.CHECK_USER_FROM_USER_SERVICE_PATH+identityNumber,Boolean.class);
     }
 
 
@@ -88,17 +89,15 @@ public class CreditServiceImpl implements CreditService {
         double limit;
         if(score < 1000){
             if(salary < 5000){
-                limit =10000;
+                limit =ConstantVariable.SMALL_CREDIT;
             }else{
-                limit =20000;
+                limit =ConstantVariable.MIDDLE_CREDIT;
             }
         }else{
-            limit = 4 * salary;
+            limit = ConstantVariable.MULTIPLIER * salary;
         }
         return limit;
     }
-
-
 
 
 
@@ -111,7 +110,7 @@ public class CreditServiceImpl implements CreditService {
             limit = limitCalculatorHelper(score,salary);//Called Limit calculator
 
             if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
-                restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
+                restTemplate.postForObject(ConstantVariable.ADD_USER_TO_USER_SERVICE_PATH, userDto, Object.class); // Send user to user-service for save database
                 creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
             }
             addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(limit).status(true).build(),CreditDto.class));
