@@ -83,33 +83,6 @@ public class CreditServiceImpl implements CreditService {
     }
 
 
-
-
-    //HELPER METHOD FOR CALCULATE CREDIT
-    CreditResultDto calculateCreditHelper(int score,UserDto userDto){
-        double limit,salary=userDto.getMonthlySalary();
-        String identityNumber = userDto.getIdentityNumber();
-
-        if(score >= 500){//APPROVED CREDIT
-            limit = limitCalculatorHelper(score,salary);//Called Limit calculator
-            if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
-                restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
-                creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
-            }
-
-
-            addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(limit).status(true).build(),CreditDto.class));
-            log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
-
-            return new CreditResultDto(true,identityNumber,score,limit);
-        }else{//UNAPPROVED CREDIT
-            log.info("Unapproved credit -> identity Number : " +identityNumber );
-            addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(0).status(false).build(),CreditDto.class));
-            return new CreditResultDto(false);
-        }
-
-    }
-
     //Calculate Credit Limit
     public double limitCalculatorHelper(Integer score,double salary){
         double limit;
@@ -124,6 +97,35 @@ public class CreditServiceImpl implements CreditService {
         }
         return limit;
     }
+
+
+
+
+
+    //HELPER METHOD FOR CALCULATE CREDIT
+    CreditResultDto calculateCreditHelper(int score,UserDto userDto){
+        double limit,salary=userDto.getMonthlySalary();
+        String identityNumber = userDto.getIdentityNumber();
+
+        if(score >= 500){//APPROVED CREDIT
+            limit = limitCalculatorHelper(score,salary);//Called Limit calculator
+
+            if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
+                restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
+                creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
+            }
+            addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(limit).status(true).build(),CreditDto.class));
+            log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
+            return new CreditResultDto(true,identityNumber,score,limit);
+
+        }else{//UNAPPROVED CREDIT
+            log.info("Unapproved credit -> identity Number : " +identityNumber );
+            addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(0).status(false).build(),CreditDto.class));
+            return new CreditResultDto(false);
+        }
+
+    }
+
 
 
 }
