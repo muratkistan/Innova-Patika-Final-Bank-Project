@@ -2,19 +2,21 @@
 
 FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-final-bank-frontend)
 
-# PROJE TANIMI
+# PROJE HAKKINDA
 ### user-service
-
+```bash
 -  Banka hesabı açmak isteyen kullanıcıdan bilgileri alınarak validasyon işlemlerine tabi tutulur.
 -  Validasyon işlemlerinden geçen kullanıcı **PostgreSql** veritabanına kaydedilir.
 -  Daha sonradan kullanıcı silme, düzenleme işlemleri yapılabilir.
+```
 ### credit-service
+```bash
 -  Kredi başvurusu yapmak isteyen kullanıcıdan kredi bilgileri alınır.
 -  Validasyon işlemlerinden geçen kullanıcının kredi skor bilgileri ilgili servisten alınır.
 -  Kriterlere göre kullanıcının kredi sonucu hesaplanır.
 -  Kredi sonucu kullanıcıya bildirilir.
 -  Kredi bilgileri **MongoDB** veritabanına kaydedilir
-
+```
 # PROJENİN MİKROSERVİS MİMARİSİ
 
 
@@ -75,7 +77,7 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 | :-------- | :------- | :-------------------------------- |
 | GET      | `/credits/getAll` | Veritabanındaki bütün kredi bilgilerini getirir. |
 | GET      | `/credits/identityNumber` | Veritabanından verilen TC numarası ile eşleşen kullanıcı getirir.Eşleşme olmadığında hata objesi döndürür. |
-| POST      | `/credits/calculate` | Validasyon işlemlerinden geçen kullanıcının kredi skoru veritabanından çekilir.  Kullanıcının kredi skoru veritabanına kayıtlı değil ise yeni bir kullanıcı olduğu için  kullanıcıya asgari oranda skor verilir , kredisi hesaplanır ve kullanıcıya dönülür. Verilen  minimum skor skorlar tablosuna kaydedilir ve kullanıcı yeni bir kullanıcı olduğu için bilgileri veri tabanına kaydedilmesi için  user-service ' e gönderilir.|
+| POST      | `/credits/calculate` | Validasyon işlemlerinden geçen kullanıcının kredi bilgisi hesaplanır ve sonuç kullanıcıya dönülür. 
 
 
 ### COMMON-SERVICE
