@@ -6,7 +6,7 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 ### user-service
 ```bash
 -  Banka hesabı açmak isteyen kullanıcıdan bilgileri alınarak validasyon işlemlerine tabi tutulur.
--  Validasyon işlemlerinden geçen kullanıcı **PostgreSql** veritabanına kaydedilir.
+-  Validasyon işlemlerinden geçen kullanıcı PostgreSql veritabanına kaydedilir.
 -  Daha sonradan kullanıcı silme, düzenleme işlemleri yapılabilir.
 ```
 ### credit-service
@@ -15,7 +15,7 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 -  Validasyon işlemlerinden geçen kullanıcının kredi skor bilgileri ilgili servisten alınır.
 -  Kriterlere göre kullanıcının kredi sonucu hesaplanır.
 -  Kredi sonucu kullanıcıya bildirilir.
--  Kredi bilgileri **MongoDB** veritabanına kaydedilir
+-  Kredi bilgileri MongoDB veritabanına kaydedilir
 ```
 # PROJENİN MİKROSERVİS MİMARİSİ
 
