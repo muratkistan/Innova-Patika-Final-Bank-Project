@@ -1,11 +1,11 @@
 package com.muratkistan.service.impl;
 
 import com.muratkistan.dto.*;
-import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.Credit;
 import com.muratkistan.repository.CreditRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
 import com.muratkistan.service.abstracts.CreditService;
+import com.muratkistan.util.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
@@ -22,12 +22,10 @@ import java.util.stream.Collectors;
 public class CreditServiceImpl implements CreditService {
 
 
-
     private final  CreditRepository creditRepository;
     private final CreditScoreService creditScoreService;
     private final ModelMapper modelMapper;
     private final RestTemplate  restTemplate;
-
 
 
 
@@ -49,12 +47,6 @@ public class CreditServiceImpl implements CreditService {
 
 
 
-
-
-
-
-
-
     //FIND CREDIT BY IDENTITY NUMBER
     @Override
     public CreditDto findCreditByIdentityNumber(String identityNumber) {
@@ -72,12 +64,15 @@ public class CreditServiceImpl implements CreditService {
     }
 
 
+
+
     //CALCULATE CREDIT
     @Override
     public CreditResultDto calculateCredit(UserDto userDto) {
         int score;
         CreditScoreDto creditScoreDto;
         if (creditScoreService.existsByIdentityNumber(userDto.getIdentityNumber())){
+            //get score by identityNumber from database
              creditScoreDto = creditScoreService.findByIdentityNumber(userDto.getIdentityNumber());
             score = creditScoreDto.getCreditScore();
         }else {//MINIMUM LIMIT IS  ASSIGNED TO A NEW CUSTOMER
@@ -88,27 +83,21 @@ public class CreditServiceImpl implements CreditService {
     }
 
 
+
+
     //HELPER METHOD FOR CALCULATE CREDIT
     CreditResultDto calculateCreditHelper(int score,UserDto userDto){
         double limit,salary=userDto.getMonthlySalary();
         String identityNumber = userDto.getIdentityNumber();
 
         if(score >= 500){//APPROVED CREDIT
-
+            limit = limitCalculatorHelper(score,salary);//Called Limit calculator
             if(!checkUserFromUserService(restTemplate,userDto.getIdentityNumber())){     //Check user is Present in Database from user-service
                 restTemplate.postForObject("http://USER-SERVICE/users/add", userDto, Object.class); // Send user to user-service for save database
                 creditScoreService.addScore(new CreditScoreDto(identityNumber,score));//Add new user score to database
             }
 
-            if(score < 1000){
-                if(salary < 5000){
-                    limit =10000;
-                }else{
-                    limit =20000;
-                }
-            }else{
-                limit = 4 * salary;
-            }
+
             addCredit(modelMapper.map(Credit.builder().identityNumber(identityNumber).creditLimit(limit).status(true).build(),CreditDto.class));
             log.info("Approved credit -> identity Number : " +identityNumber + " limit: "+limit);
 
@@ -119,6 +108,21 @@ public class CreditServiceImpl implements CreditService {
             return new CreditResultDto(false);
         }
 
+    }
+
+    //Calculate Credit Limit
+    public double limitCalculatorHelper(Integer score,double salary){
+        double limit;
+        if(score < 1000){
+            if(salary < 5000){
+                limit =10000;
+            }else{
+                limit =20000;
+            }
+        }else{
+            limit = 4 * salary;
+        }
+        return limit;
     }
 
 

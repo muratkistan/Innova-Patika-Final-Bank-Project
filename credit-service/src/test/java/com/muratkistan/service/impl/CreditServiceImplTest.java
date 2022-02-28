@@ -1,8 +1,6 @@
 package com.muratkistan.service.impl;
 
 import com.muratkistan.dto.CreditDto;
-import com.muratkistan.dto.UserDto;
-import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.Credit;
 import com.muratkistan.repository.CreditRepository;
 import com.muratkistan.service.abstracts.CreditScoreService;
@@ -18,9 +16,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)

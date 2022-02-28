@@ -2,10 +2,10 @@ package com.muratkistan.service.impl;
 
 
 import com.muratkistan.dto.UserDto;
-import com.muratkistan.exception.NotFoundException;
 import com.muratkistan.model.User;
 import com.muratkistan.repository.UserRepository;
 import com.muratkistan.service.abstracts.UserService;
+import com.muratkistan.util.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
