@@ -1,4 +1,4 @@
-package com.muratkistan.exception;
+package com.muratkistan.util;
 
 public class NotFoundException extends  RuntimeException {
     public NotFoundException(String message){

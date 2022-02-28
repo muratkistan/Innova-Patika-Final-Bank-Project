@@ -1,10 +1,9 @@
-package com.muratkistan.custom;
+package com.muratkistan.util;
 
 import lombok.Data;
 
 import java.util.Date;
 import java.util.Map;
-
 
 @Data
 public class ApiError {

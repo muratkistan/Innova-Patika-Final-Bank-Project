@@ -1,8 +1,9 @@
-package com.muratkistan.exception.handler;
+package com.muratkistan.util.handler;
 
-//import com.muratkistan.custom.ApiError;
-import com.muratkistan.custom.ApiError;
-import com.muratkistan.exception.NotFoundException;
+
+import com.muratkistan.util.ApiError;
+import com.muratkistan.util.NotFoundException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -15,8 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
-public class GenericResponseError {
-
+public class GenericExceptionHandler {
 
     @ExceptionHandler(NotFoundException.class)
     public ResponseEntity<Map> handleNotfoundException(NotFoundException exception) {
@@ -37,4 +37,7 @@ public class GenericResponseError {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 
     }
+
+
+
 }
