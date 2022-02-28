@@ -1,0 +1,124 @@
+2022-02-28 07:31:54.450  INFO 20688 --- [main] com.muratkistan.EurekaServerApplication  : Starting EurekaServerApplication using Java 16 on LAPTOP-BQUUL6IB with PID 20688 (C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project\eureka-server\target\classes started by Murat in C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project)
+2022-02-28 07:31:54.452  INFO 20688 --- [main] com.muratkistan.EurekaServerApplication  : No active profile set, falling back to default profiles: default
+2022-02-28 07:31:55.294  INFO 20688 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a86bd094-e36a-36a1-9779-61d8bf46850c
+2022-02-28 07:31:55.525  INFO 20688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2022-02-28 07:31:55.534  INFO 20688 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-28 07:31:55.534  INFO 20688 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-28 07:31:55.652  INFO 20688 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-28 07:31:55.652  INFO 20688 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1159 ms
+2022-02-28 07:31:56.002  INFO 20688 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.4 05/24/2017 03:20 PM'
+2022-02-28 07:31:56.047  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-02-28 07:31:56.048  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-02-28 07:31:56.165  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-02-28 07:31:56.165  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-02-28 07:31:57.086  INFO 20688 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-02-28 07:31:57.125  WARN 20688 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-02-28 07:31:57.137  INFO 20688 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-02-28 07:31:57.158  INFO 20688 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-02-28 07:31:57.158  INFO 20688 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2022-02-28 07:31:57.163  INFO 20688 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1646022717162 with initial instances count: 0
+2022-02-28 07:31:57.188  INFO 20688 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2022-02-28 07:31:57.190  INFO 20688 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2022-02-28 07:31:57.374  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-02-28 07:31:57.375  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-02-28 07:31:57.375  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-02-28 07:31:57.375  INFO 20688 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-02-28 07:31:57.527  INFO 20688 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2022-02-28 07:31:57.562  INFO 20688 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2022-02-28 07:31:57.570  INFO 20688 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2022-02-28 07:31:57.576  INFO 20688 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-02-28 07:31:57.630  INFO 20688 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application UNKNOWN with eureka with status UP
+2022-02-28 07:31:57.632  INFO 20688 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2022-02-28 07:31:57.641  INFO 20688 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2022-02-28 07:31:57.641  INFO 20688 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2022-02-28 07:31:57.641  INFO 20688 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2022-02-28 07:31:57.642  INFO 20688 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2022-02-28 07:31:57.642  INFO 20688 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2022-02-28 07:31:57.653  INFO 20688 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2022-02-28 07:31:57.654  INFO 20688 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2022-02-28 07:31:57.702  INFO 20688 --- [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2022-02-28 07:31:57.756  INFO 20688 --- [main] com.muratkistan.EurekaServerApplication  : Started EurekaServerApplication in 3.877 seconds (JVM running for 4.948)
+2022-02-28 07:31:57.999  INFO 20688 --- [RMI TCP Connection(3)-172.19.96.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-28 07:31:58.000  INFO 20688 --- [RMI TCP Connection(3)-172.19.96.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-28 07:31:58.001  INFO 20688 --- [RMI TCP Connection(3)-172.19.96.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-28 07:32:09.240  INFO 20688 --- [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status UP (replication=false)
+2022-02-28 07:32:09.863  INFO 20688 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status UP (replication=true)
+2022-02-28 07:32:19.956  INFO 20688 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status UP (replication=false)
+2022-02-28 07:32:20.466  INFO 20688 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status UP (replication=true)
+2022-02-28 07:32:21.092  INFO 20688 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CREDIT-SERVICE/host.docker.internal:CREDIT-SERVICE:9091 with status UP (replication=false)
+2022-02-28 07:32:21.601  INFO 20688 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CREDIT-SERVICE/host.docker.internal:CREDIT-SERVICE:9091 with status UP (replication=true)
+2022-02-28 07:32:42.134  INFO 20688 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application UNKNOWN with eureka with status DOWN
+2022-02-28 07:32:42.158  INFO 20688 --- [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2022-02-28 07:32:42.210  INFO 20688 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2022-02-28 07:32:42.445  INFO 20688 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2022-02-28 07:32:42.445  INFO 20688 --- [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2022-02-28 07:32:42.465  INFO 20688 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2022-02-28 07:32:42.553  INFO 20688 --- [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2022-02-28 07:32:42.596  INFO 20688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-02-28 07:32:42.606  INFO 20688 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-02-28 07:32:47.038  INFO 3316 --- [main] com.muratkistan.EurekaServerApplication  : Starting EurekaServerApplication using Java 16 on LAPTOP-BQUUL6IB with PID 3316 (C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project\eureka-server\target\classes started by Murat in C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project)
+2022-02-28 07:32:47.042  INFO 3316 --- [main] com.muratkistan.EurekaServerApplication  : No active profile set, falling back to default profiles: default
+2022-02-28 07:32:48.576  INFO 3316 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a86bd094-e36a-36a1-9779-61d8bf46850c
+2022-02-28 07:32:48.831  INFO 3316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8761 (http)
+2022-02-28 07:32:48.838  INFO 3316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-28 07:32:48.838  INFO 3316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-28 07:32:48.948  INFO 3316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-28 07:32:48.948  INFO 3316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1853 ms
+2022-02-28 07:32:49.311  INFO 3316 --- [main] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.4 05/24/2017 03:20 PM'
+2022-02-28 07:32:49.396  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-02-28 07:32:49.397  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-02-28 07:32:49.524  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-02-28 07:32:49.524  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-02-28 07:32:50.523  INFO 3316 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses Jersey
+2022-02-28 07:32:50.565  WARN 3316 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-02-28 07:32:50.582  INFO 3316 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-02-28 07:32:50.602  INFO 3316 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-02-28 07:32:50.602  INFO 3316 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+2022-02-28 07:32:50.606  INFO 3316 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1646022770605 with initial instances count: 0
+2022-02-28 07:32:50.635  INFO 3316 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+2022-02-28 07:32:50.637  INFO 3316 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+2022-02-28 07:32:50.767  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2022-02-28 07:32:50.767  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2022-02-28 07:32:50.768  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2022-02-28 07:32:50.768  INFO 3316 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2022-02-28 07:32:50.922  INFO 3316 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+2022-02-28 07:32:50.955  INFO 3316 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+2022-02-28 07:32:50.963  INFO 3316 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+2022-02-28 07:32:50.969  INFO 3316 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-02-28 07:32:51.020  INFO 3316 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application UNKNOWN with eureka with status UP
+2022-02-28 07:32:51.022  INFO 3316 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
+2022-02-28 07:32:51.030  INFO 3316 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+2022-02-28 07:32:51.031  INFO 3316 --- [Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+2022-02-28 07:32:51.031  INFO 3316 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+2022-02-28 07:32:51.032  INFO 3316 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+2022-02-28 07:32:51.032  INFO 3316 --- [Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+2022-02-28 07:32:51.053  INFO 3316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8761 (http) with context path ''
+2022-02-28 07:32:51.054  INFO 3316 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+2022-02-28 07:32:51.112  INFO 3316 --- [Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+2022-02-28 07:32:51.117  INFO 3316 --- [http-nio-8761-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-28 07:32:51.117  INFO 3316 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-28 07:32:51.118  INFO 3316 --- [http-nio-8761-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-02-28 07:32:51.138  WARN 3316 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: CREDIT-SERVICE - host.docker.internal:CREDIT-SERVICE:9091
+2022-02-28 07:32:51.138  WARN 3316 --- [http-nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Renew): CREDIT-SERVICE - host.docker.internal:CREDIT-SERVICE:9091
+2022-02-28 07:32:51.180  INFO 3316 --- [main] com.muratkistan.EurekaServerApplication  : Started EurekaServerApplication in 4.998 seconds (JVM running for 6.272)
+2022-02-28 07:32:51.203  INFO 3316 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CREDIT-SERVICE/host.docker.internal:CREDIT-SERVICE:9091 with status UP (replication=false)
+2022-02-28 07:32:51.791  INFO 3316 --- [http-nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CREDIT-SERVICE/host.docker.internal:CREDIT-SERVICE:9091 with status UP (replication=true)
+2022-02-28 07:32:54.195  INFO 3316 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status DOWN (replication=false)
+2022-02-28 07:32:54.708  INFO 3316 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status DOWN (replication=true)
+2022-02-28 07:32:58.892  INFO 3316 --- [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status DOWN (replication=false)
+2022-02-28 07:32:59.326  INFO 3316 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 (replication=false)
+2022-02-28 07:32:59.403  INFO 3316 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status DOWN (replication=true)
+2022-02-28 07:32:59.404  WARN 3316 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: API-GATEWAY/host.docker.internal:API-GATEWAY:9191
+2022-02-28 07:32:59.404  INFO 3316 --- [http-nio-8761-exec-9] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): API-GATEWAY - host.docker.internal:API-GATEWAY:9191
+2022-02-28 07:32:59.406  WARN 3316 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.cluster.ReplicationTask       : The replication of task API-GATEWAY/host.docker.internal:API-GATEWAY:9191:Cancel@localhost failed with response code 404
+2022-02-28 07:32:59.406  WARN 3316 --- [TaskBatchingWorker-target_localhost-0] c.netflix.eureka.cluster.PeerEurekaNode  : API-GATEWAY/host.docker.internal:API-GATEWAY:9191:Cancel@localhost: missing entry.
+2022-02-28 07:33:01.967  INFO 3316 --- [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 (replication=false)
+2022-02-28 07:33:02.481  WARN 3316 --- [http-nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/host.docker.internal:USER-SERVICE:9092
+2022-02-28 07:33:02.482  INFO 3316 --- [http-nio-8761-exec-3] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - host.docker.internal:USER-SERVICE:9092
+2022-02-28 07:33:02.484  WARN 3316 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/host.docker.internal:USER-SERVICE:9092:Cancel@localhost failed with response code 404
+2022-02-28 07:33:02.485  WARN 3316 --- [TaskBatchingWorker-target_localhost-14] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/host.docker.internal:USER-SERVICE:9092:Cancel@localhost: missing entry.
+2022-02-28 07:33:07.864  INFO 3316 --- [http-nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status UP (replication=false)
+2022-02-28 07:33:08.379  INFO 3316 --- [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance API-GATEWAY/host.docker.internal:API-GATEWAY:9191 with status UP (replication=true)
+2022-02-28 07:33:12.506  INFO 3316 --- [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status UP (replication=false)
+2022-02-28 07:33:13.017  INFO 3316 --- [http-nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/host.docker.internal:USER-SERVICE:9092 with status UP (replication=true)
+2022-02-28 07:33:51.032  INFO 3316 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms

@@ -1,0 +1,104 @@
+2022-02-28 07:32:05.083  INFO 1812 --- [main] com.muratkistan.CloudGatewayApplication  : Starting CloudGatewayApplication using Java 16 on LAPTOP-BQUUL6IB with PID 1812 (C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project\cloud-gateway\target\classes started by Murat in C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project)
+2022-02-28 07:32:05.085  INFO 1812 --- [main] com.muratkistan.CloudGatewayApplication  : No active profile set, falling back to default profiles: default
+2022-02-28 07:32:06.078  INFO 1812 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=31989db8-ea19-3016-af54-6437899417d5
+2022-02-28 07:32:06.171  INFO 1812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:32:06.177  INFO 1812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:32:06.180  INFO 1812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:32:07.534  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-02-28 07:32:07.534  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-02-28 07:32:07.534  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-02-28 07:32:07.534  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-02-28 07:32:07.534  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-02-28 07:32:07.535  INFO 1812 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-02-28 07:32:08.126  INFO 1812 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-02-28 07:32:08.317  INFO 1812 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-02-28 07:32:08.398  WARN 1812 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-02-28 07:32:08.483  INFO 1812 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-02-28 07:32:08.530  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-02-28 07:32:08.535  INFO 1812 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-02-28 07:32:08.564  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-02-28 07:32:08.565  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-02-28 07:32:09.098  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-02-28 07:32:09.105  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-02-28 07:32:09.112  INFO 1812 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-28 07:32:09.128  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1646022729126 with initial instances count: 0
+2022-02-28 07:32:09.129  INFO 1812 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2022-02-28 07:32:09.130  INFO 1812 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1646022729130, current=UP, previous=STARTING]
+2022-02-28 07:32:09.133  INFO 1812 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191: registering service...
+2022-02-28 07:32:09.244  INFO 1812 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191 - registration status: 204
+2022-02-28 07:32:09.441  INFO 1812 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 9191
+2022-02-28 07:32:09.443  INFO 1812 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9191
+2022-02-28 07:32:09.792  INFO 1812 --- [main] com.muratkistan.CloudGatewayApplication  : Started CloudGatewayApplication in 5.359 seconds (JVM running for 6.445)
+2022-02-28 07:32:39.109  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-02-28 07:32:39.109  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-02-28 07:32:39.110  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-02-28 07:32:39.110  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-02-28 07:32:39.110  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-02-28 07:32:39.110  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2022-02-28 07:32:39.110  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-02-28 07:32:39.123  INFO 1812 --- [DiscoveryClient-CacheRefreshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-02-28 07:32:54.188  INFO 1812 --- [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application API-GATEWAY with eureka with status DOWN
+2022-02-28 07:32:54.188  INFO 1812 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1646022774188, current=DOWN, previous=UP]
+2022-02-28 07:32:54.189  INFO 1812 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191: registering service...
+2022-02-28 07:32:54.197  INFO 1812 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191 - registration status: 204
+2022-02-28 07:32:56.301  INFO 1812 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2022-02-28 07:32:59.319  INFO 1812 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2022-02-28 07:32:59.328  INFO 1812 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191 - deregister  status: 200
+2022-02-28 07:32:59.416  INFO 1812 --- [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2022-02-28 07:33:02.947  INFO 3696 --- [main] com.muratkistan.CloudGatewayApplication  : Starting CloudGatewayApplication using Java 16 on LAPTOP-BQUUL6IB with PID 3696 (C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project\cloud-gateway\target\classes started by Murat in C:\Users\Murat\Final-Project\Innova-Patika-Final-Bank-Project)
+2022-02-28 07:33:02.950  INFO 3696 --- [main] com.muratkistan.CloudGatewayApplication  : No active profile set, falling back to default profiles: default
+2022-02-28 07:33:04.679  INFO 3696 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=31989db8-ea19-3016-af54-6437899417d5
+2022-02-28 07:33:04.813  INFO 3696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:33:04.826  INFO 3696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:33:04.830  INFO 3696 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-28 07:33:06.289  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2022-02-28 07:33:06.290  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2022-02-28 07:33:06.290  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2022-02-28 07:33:06.290  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2022-02-28 07:33:06.291  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2022-02-28 07:33:06.291  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2022-02-28 07:33:06.291  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2022-02-28 07:33:06.291  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2022-02-28 07:33:06.292  INFO 3696 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2022-02-28 07:33:06.937  INFO 3696 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2022-02-28 07:33:07.233  INFO 3696 --- [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2022-02-28 07:33:07.292  WARN 3696 --- [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2022-02-28 07:33:07.366  INFO 3696 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2022-02-28 07:33:07.434  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2022-02-28 07:33:07.440  INFO 3696 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2022-02-28 07:33:07.473  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2022-02-28 07:33:07.474  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2022-02-28 07:33:07.792  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2022-02-28 07:33:07.799  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2022-02-28 07:33:07.805  INFO 3696 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-02-28 07:33:07.820  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1646022787819 with initial instances count: 2
+2022-02-28 07:33:07.821  INFO 3696 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application API-GATEWAY with eureka with status UP
+2022-02-28 07:33:07.822  INFO 3696 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1646022787822, current=UP, previous=STARTING]
+2022-02-28 07:33:07.824  INFO 3696 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191: registering service...
+2022-02-28 07:33:07.865  INFO 3696 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_API-GATEWAY/host.docker.internal:API-GATEWAY:9191 - registration status: 204
+2022-02-28 07:33:08.024  INFO 3696 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 9191
+2022-02-28 07:33:08.025  INFO 3696 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9191
+2022-02-28 07:33:08.258  INFO 3696 --- [main] com.muratkistan.CloudGatewayApplication  : Started CloudGatewayApplication in 5.909 seconds (JVM running for 6.809)
