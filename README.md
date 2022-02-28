@@ -18,7 +18,8 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 # PROJENİN MİKROSERVİS MİMARİSİ
 
 
-![ax](https://user-images.githubusercontent.com/67208557/155901383-d661107f-9827-4e94-8e72-17010cfb8c27.PNG)
+![micro](https://user-images.githubusercontent.com/67208557/155906931-ccb5b120-40e0-4af6-85f0-8d4c8f152070.PNG)
+
 
 
 # SERVİSLER
