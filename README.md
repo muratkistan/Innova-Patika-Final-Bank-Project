@@ -56,11 +56,11 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 | Http Method | Erişim Noktası     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
 | GET      | `/users/getAll` | Veritabanındaki bütün kullanıcıları getirir. |
-| GET      | `/users/id` | Veritabanında verilen id değeri ile eşleşen kullanıcı getirir.Eşleşme olmadığında hata objesi döndürür. |
-| GET      | `/users/exists/identityNumber` | Verilen TC numaralı kullanıcının veritabanında olup olmadığını kontrol eder.Var ise true yok ise false döndürür. |
+| GET      | `/users/:id` | Veritabanında verilen id değeri ile eşleşen kullanıcı getirir.Eşleşme olmadığında hata objesi döndürür. |
+| GET      | `/users/exists/:identityNumber` | Verilen TC numaralı kullanıcının veritabanında olup olmadığını kontrol eder.Var ise true yok ise false döndürür. |
 | POST      | `/users/add` | Validasyon işlemlerinden geçen kullanıcıyı veritabanına kaydeder. |
-| PUT     | `/users/update/id` | Kullanıcının kayıtlı olup olmadığı kontrol edilir kayıtlı ise update işlemi yapılır.Kayıtlı değil ise hata objesi döndürür. |
-| DELETE      | `/users/delete/id` | Kullanıcının kayıtlı olup olmadığı kontrol edilir kayıtlı ise delete işlemi gerçekleştirilir.Kayıtlı değil ise hata objesi dönülür. |
+| PUT     | `/users/update/:id` | Kullanıcının kayıtlı olup olmadığı kontrol edilir kayıtlı ise update işlemi yapılır.Kayıtlı değil ise hata objesi döndürür. |
+| DELETE      | `/users/delete/:id` | Kullanıcının kayıtlı olup olmadığı kontrol edilir kayıtlı ise delete işlemi gerçekleştirilir.Kayıtlı değil ise hata objesi dönülür. |
 
 
 
@@ -76,7 +76,7 @@ FRONTEND İÇİN [**TIKLAYINIZ**](https://github.com/muratkistan/innova-patika-f
 | Http Method | Erişim Noktası     | Açıklama                       |
 | :-------- | :------- | :-------------------------------- |
 | GET      | `/credits/getAll` | Veritabanındaki bütün kredi bilgilerini getirir. |
-| GET      | `/credits/identityNumber` | Veritabanından verilen TC numarası ile eşleşen kullanıcı getirir.Eşleşme olmadığında hata objesi döndürür. |
+| GET      | `/credits/:identityNumber` | Veritabanından verilen TC numarası ile eşleşen kullanıcı getirir.Eşleşme olmadığında hata objesi döndürür. |
 | POST      | `/credits/calculate` | Validasyon işlemlerinden geçen kullanıcının kredi bilgisi hesaplanır ve sonuç kullanıcıya dönülür. 
 
 
